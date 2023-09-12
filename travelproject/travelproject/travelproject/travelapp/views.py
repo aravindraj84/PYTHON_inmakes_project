@@ -1,0 +1,9 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+from . models import Place
+from . models import People
+def demo(request):
+    obj=Place.objects.all()
+    obj2=People.objects.all()
+    return render(request,"index.html",{'result':obj,'people':obj2})
